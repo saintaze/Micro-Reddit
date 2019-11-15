@@ -1,20 +1,23 @@
-# Rails - Micro-Reddit
+# Micro-Reddit
 
-This [Project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/building-with-active-record-ruby-on-rails) is meant to be a solid introduction to models and migrations using active record. There are no views, controllers, or routes in this project, but you can use the rails console to play with model creation and investigate associations.
+This project is meant to be a solid introduction to `Models` and `Migrations` in `Ruby on Rails`. There are no views, controllers, or routes in this project. But you can use the `rails console` to play with model creation and investigate associations.
+
+# Built With
+ - Ruby on Rails 6
 
 ### Installation
 
-- Pull down the repo and run `bundle install`. 
+- Clone repo and run `bundle install`. 
 
 ### Model Tests
 
-I decided to implement specs early on during the creation of each model.
+I decided to implement specs early on during the creation of each `Model`.
 
-- Run `rails test:models` to verify the tests pass. 
+- Run `rails test:models` in the console to verify that tests pass. 
 
 ## Model Design
 
-- The can have users. 
+- The site can have users. 
 - Users can make posts. 
 - Users can make comments. 
 - Posts can be commented on. 
@@ -26,25 +29,45 @@ Before beginning the project, I planned the models:
 
 - has_many :posts
 - has_many :comments
-
 - has a username 
-..* represented by a string, which is required to be present, and must be no more than 50 chars.
+  - represented by a string 
+  - must be present  
+  - must be no more than 50 chars
+  - must be unique (case insensitive)
 - has an email 
-..* represented by a string, which is required to be present, must be in the correct format, must be no more than 
+  - represented by a string 
+  - must be present  
+  - must be no more than 255 chars
+  - must be unique (case insensitive)
+  - must comply valid email format
 
 Post:
 - belongs_to :user
 - has_many: comments
-- has a title, represented by a string, which is required to be present
-- has content, represented by text, also required to be present
-- must have a user_id
+- has a title, 
+  - represented by a string
+  - must be present
+  - must not be more than 255 chars
+  - must be unique (case insensitive)
+- has body, 
+  - represented by text
+  - must be present
+- has user_id
+  - represented by integer
+  - must be present
 
 Comment:
 - belongs_to :user
 - belongs_to :post
-- has content, represented by text, required to be present
-- must have a user_id and a post_id to prevent the comment from being orphaned
+- has content
+  - represented by text 
+  - must be present
+- has user_id
+  - represented by integer 
+  - must be present
+- has post_id 
+  - represented by integer 
+  - must be present 
 
-## Author
-
-Ayaz Ahmed
+# Author
++ Saintaze [@saintaze](https://github.com/saintaze/)
