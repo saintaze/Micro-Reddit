@@ -6,23 +6,31 @@ This [Project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/buil
 
 - Pull down the repo and run `bundle install`. 
 
-### RSpec Tests
+### Model Tests
 
-I decided to implement specs early on during the creation of each model. I used RSpec-rails and database cleaner to accomplish the TDD of this project.
+I decided to implement specs early on during the creation of each model.
 
-- Run `rspec spec/models` to verify the tests pass. 
+- Run `rails test:models` to verify the tests pass. 
 
 ## Model Design
 
-The site must have users. Users must be able to submit posts and comment on links. Posts must be able to be commented on. Comments do not need to be able to be commented on, for now.
+- The can have users. 
+- Users can make posts. 
+- Users can make comments. 
+- Posts can be commented on. 
+- Comments cannot be further commented on (no nested comments / 1-level)
 
 Before beginning the project, I planned the models:
 
-User:
+### User
+
 - has_many :posts
 - has_many :comments
-- has a username, represented by a string, which is required to be present, and must be between 6 and 16 chars
-- has an email, represented by a string, which is required to be present, and must be in the correct format
+
+- has a username 
+..* represented by a string, which is required to be present, and must be no more than 50 chars.
+- has an email 
+..* represented by a string, which is required to be present, must be in the correct format, must be no more than 
 
 Post:
 - belongs_to :user
