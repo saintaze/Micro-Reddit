@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+glass:
+  content: "Howdie this is great"
+  user: john
+  post: green
+
+wood:
+  content: "I want to create video games"
+  user: archer
+  post: red
